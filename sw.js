@@ -1,4 +1,4 @@
-const CACHE = "kr-daily-v2";
+const CACHE = "kr-daily-v4";
 const ASSETS = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png"];
 
 self.addEventListener("install", (e) => {
@@ -39,7 +39,7 @@ self.addEventListener("fetch", (e) => {
     return;
   }
 
-  // 图标、清单走缓存优先
+  // 音频、图标等走缓存优先
   e.respondWith(
     caches.match(e.request).then((hit) => {
       if (hit) return hit;
